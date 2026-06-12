@@ -1,1 +1,97 @@
 index.html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeiterfassungssystem Österreich</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 20px; text-align: center; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #005A44; }
+        .form-group { margin-bottom: 15px; }
+        input[type="text"] { padding: 10px; width: 40%; font-size: 16px; border: 1px solid #ccc; border-radius: 4px; margin: 5px; }
+        button { padding: 12px 25px; font-size: 16px; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; margin: 10px; transition: 0.2s; }
+        .btn-kommen { background-color: #28a745; color: white; }
+        .btn-kommen:hover { background-color: #218838; }
+        .btn-gehen { background-color: #dc3545; color: white; }
+        .btn-gehen:hover { background-color: #c82333; }
+        .nav-links { margin: 20px 0; }
+        .nav-links a { color: #005A44; font-weight: bold; text-decoration: none; border: 1px solid #005A44; padding: 8px 15px; border-radius: 4px; }
+        .nav-links a:hover { background-color: #005A44; color: white; }
+        table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+        th, td { padding: 12px; border: 1px solid #ddd; text-align: center; }
+        th { background-color: #005A44; color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>⏱️ Zeiterfassung & Monitoring</h1>
+    
+    <div class="nav-links">
+        <a href="arbeit.html">📸 Galerie: Wo wir arbeiten</a>
+    </div>
+
+    <div class="form-group">
+        <input type="text" id="vorname" placeholder="Vorname">
+        <input type="text" id="nachname" placeholder="Nachname">
+    </div>
+
+    <div>
+        <button class="btn-kommen" onclick="erfasseZeit('Kommen')">🟢 Kommen</button>
+        <button class="btn-gehen" onclick="erfasseZeit('Gehen')">🔴 Gehen</button>
+    </div>
+
+    <h2>📊 Monitoring (Geladene Zeiten)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Mitarbeiter</th>
+                <th>Aktion</th>
+                <th>Datum (Tag/Monat/Jahr)</th>
+                <th>Uhrzeit</th>
+            </tr>
+        </thead>
+        <tbody id="logTabelle">
+            </tbody>
+    </table>
+</div>
+
+<script>
+    function erfasseZeit(status) {
+        const vorname = document.getElementById('vorname').value.trim();
+        const nachname = document.getElementById('nachname').value.trim();
+
+        if (vorname === "" || nachname === "") {
+            alert("Bitte gib zuerst deinen Vornamen und Nachnamen ein!");
+            return;
+        }
+
+        const jetzt = new Date();
+        
+        // Datum im Format: Tag.Monat.Jahr (z.B. 12.06.2026)
+        const tag = String(jetzt.getDate()).padStart(2, '0');
+        const monat = String(jetzt.getMonth() + 1).padStart(2, '0');
+        const jahr = jetzt.getFullYear();
+        const datumString = `${tag}.${monat}.${jahr}`;
+
+        // Uhrzeit im Format: Std:Min:Sek
+        const uhrzeitString = jetzt.toLocaleTimeString('de-AT');
+
+        // Eintrag in die Tabelle einfügen
+        const tabelle = document.getElementById('logTabelle');
+        const neueZeile = tabelle.insertRow(0); // Neue Einträge oben anfügen
+
+        neueZeile.innerHTML = `
+            <td>${vorname} ${nachname}</td>
+            <td><strong>${status}</strong></td>
+            <td>${datumString}</td>
+            <td>${uhrzeitString}</td>
+        `;
+    }
+</script>
+
+</body>
+</html>
