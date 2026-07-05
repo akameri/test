@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LogicFlow – IT-Services & Lösungen | Web, Apps & KI</title>
-<meta name="description" content="LogicFlow entwickelt maßgeschneiderte digitale Lösungen: Web- & Mobile-Apps, Corporate-Webseiten, E-Commerce, KI-gestütztes Webdesign, SEO und zuverlässigen Support – von der Idee bis zur fertigen Anwendung.">
-<meta name="author" content="LogicFlow">
+<title>QuantumLogic – IT-Services & Lösungen | Web, Apps & KI</title>
+<meta name="description" content="QuantumLogic entwickelt maßgeschneiderte digitale Lösungen: Web- & Mobile-Apps, POS-Systeme, Telematik, Mobile Workplace, E-Commerce, KI-gestütztes Webdesign, SEO und zuverlässigen Support – für Gastronomie, Handel, Bau und mehr.">
+<meta name="author" content="QuantumLogic">
 <meta name="theme-color" content="#2E1065">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="LogicFlow – IT-Services & Lösungen">
-<meta property="og:description" content="Maßgeschneiderte digitale Lösungen – von der ersten Idee bis zur fertigen Anwendung. Web & Apps, E-Commerce, KI-Webdesign, SEO und Support.">
-<meta property="og:image" content="assets/logicflow-og.png">
+<meta property="og:title" content="QuantumLogic – IT-Services & Lösungen">
+<meta property="og:description" content="Maßgeschneiderte digitale Lösungen – von der ersten Idee bis zur fertigen Anwendung. Branchenlösungen für Gastronomie, Handel, Bau und Mobile Workplace.">
+<meta property="og:image" content="assets/quantumlogic-og.png">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -187,6 +187,18 @@
   .card .tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:7px}
   .card .tags span{font-size:.74rem;font-weight:600;color:var(--violet-2);background:var(--bg-tint);border-radius:999px;padding:5px 11px}
 
+  /* ---------- Branchen ---------- */
+  #branchen{background:var(--bg-soft)}
+  .cat{margin-top:56px}
+  .cat:first-of-type{margin-top:0}
+  .cat-head{display:flex;align-items:center;gap:16px;margin-bottom:26px}
+  .cat-num{
+    flex-shrink:0;width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:1rem;color:#fff;background:var(--grad);box-shadow:0 10px 22px rgba(91,33,182,.28)
+  }
+  .cat-head h3{font-size:1.12rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--indigo)}
+  .cat-head .line{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
   /* ---------- Process ---------- */
   #ablauf{background:var(--bg-soft)}
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:step}
@@ -205,6 +217,11 @@
   .about-visual{position:relative;border-radius:24px;padding:44px;background:var(--bg-soft);border:1px solid var(--line);box-shadow:var(--shadow-sm);overflow:hidden}
   .about-visual::before{content:"";position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(34,211,238,.22),transparent 70%)}
   .about-visual img{position:relative;width:78%;margin:0 auto}
+  .about-lockup{position:relative;text-align:center}
+  .about-lockup img{width:44%;max-width:190px;margin:0 auto 22px;filter:drop-shadow(0 16px 30px rgba(91,33,182,.22))}
+  .about-lockup .wm{font-size:clamp(2rem,5vw,2.9rem);font-weight:800;letter-spacing:-.02em;line-height:1}
+  .about-lockup .wm .a{color:var(--indigo)}.about-lockup .wm .b{color:var(--violet-2)}
+  .about-lockup .tag{margin-top:12px;font-size:.82rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
   .about-copy h2{font-size:clamp(1.8rem,3.6vw,2.5rem);line-height:1.15;letter-spacing:-.02em;font-weight:800;margin:14px 0 18px}
   .about-copy p{color:var(--slate);font-size:1.05rem;margin-bottom:16px}
   .about-list{list-style:none;margin:24px 0 30px;display:grid;gap:14px}
@@ -316,12 +333,13 @@
 <!-- ===== NAV ===== -->
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
-    <a href="#top" class="brand" aria-label="LogicFlow Startseite">
-      <img src="assets/logo-mark.png" alt="LogicFlow Logo">
-      <span><span class="n1">Logic</span><span class="n2">Flow</span></span>
+    <a href="#top" class="brand" aria-label="QuantumLogic Startseite">
+      <img src="assets/logo-mark.png" alt="QuantumLogic Logo">
+      <span><span class="n1">Quantum</span><span class="n2">Logic</span></span>
     </a>
     <nav class="nav-links" id="navLinks">
       <a href="#leistungen">Leistungen</a>
+      <a href="#branchen">Branchen</a>
       <a href="#ablauf">Ablauf</a>
       <a href="#ueber">Über uns</a>
       <a href="#vorteile">Vorteile</a>
@@ -339,7 +357,7 @@
     <div class="reveal">
       <span class="hero-badge"><span class="dot"></span>IT-Services & digitale Lösungen</span>
       <h1>Von der Idee zur <span class="accent">fertigen Anwendung.</span></h1>
-      <p class="lead">LogicFlow entwickelt maßgeschneiderte Web- & Mobile-Apps, moderne Webseiten, Online-Shops und KI-gestützte Lösungen – technisch sauber, schnell und exakt auf Ihre Marke abgestimmt.</p>
+      <p class="lead">QuantumLogic entwickelt maßgeschneiderte Web- & Mobile-Apps, POS- und Branchenlösungen, moderne Webseiten und KI-gestützte Systeme – technisch sauber, schnell und exakt auf Ihr Unternehmen abgestimmt.</p>
       <div class="hero-cta">
         <a href="#kontakt" class="btn btn-primary">
           Kostenloses Erstgespräch
@@ -356,8 +374,8 @@
 
     <div class="hero-visual reveal">
       <div class="hero-card">
-        <img class="mark" src="assets/logo-mark.png" alt="LogicFlow Markenzeichen">
-        <h3>LogicFlow</h3>
+        <img class="mark" src="assets/logo-mark.png" alt="QuantumLogic Markenzeichen">
+        <h3>QuantumLogic</h3>
         <div class="sub">IT-Services & Lösungen</div>
         <div class="mini-stats">
           <div class="mini-stat"><b>100%</b><small>Maßgeschneidert</small></div>
@@ -465,6 +483,125 @@
   </div>
 </section>
 
+<!-- ===== BRANCHEN ===== -->
+<section class="section" id="branchen">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Branchenlösungen</span>
+      <h2>Von A bis Z – sagen Sie uns einfach, was Sie brauchen</h2>
+      <p>Spezialisierte IT-Lösungen für Ihre Branche – von der Kasse über die Baustelle bis zur zentralen IT. Alles aus einer Hand, sauber eingerichtet und betriebsbereit übergeben.</p>
+    </div>
+
+    <!-- Kategorie 1 -->
+    <div class="cat">
+      <div class="cat-head reveal">
+        <span class="cat-num">01</span>
+        <h3>Gastronomie, Handel &amp; E-Commerce</h3>
+        <span class="line"></span>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M3 9h18M7 20h10M12 16v4"/></svg></div>
+          <h3>POS-Systeme &amp; Kassenintegration</h3>
+          <p>Moderne, finanzamtkonforme Kassensysteme (TSE). Wir übernehmen die komplette Einrichtung, Netzwerk-Integration und reibungslose Inbetriebnahme Ihres Point of Sale.</p>
+          <div class="tags"><span>TSE-konform</span><span>Einrichtung</span><span>Netzwerk</span></div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/><path d="M9 6h6M9 9h4"/></svg></div>
+          <h3>Mobile Ordering &amp; KDS</h3>
+          <p>Beschleunigen Sie Ihren Service: digitale Bestellungen direkt am Tisch per Handheld oder QR-Code, die ohne Zeitverlust auf modernen Küchenmonitoren (Kitchen Display Systems) landen.</p>
+          <div class="tags"><span>QR-Bestellung</span><span>Küchenmonitor</span><span>Handheld</span></div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0M2 8.8a15 15 0 0 1 20 0"/><path d="M12 19h.01"/></svg></div>
+          <h3>Gäste-WLAN mit Captive Portal</h3>
+          <p>Bieten Sie Ihren Kunden sicheres Internet: rechtssicheres Gäste-WLAN mit vorgeschalteter Anmeldeseite (Captive Portal) – perfekt für digitale Speisekarten, Angebote oder Feedback.</p>
+          <div class="tags"><span>Rechtssicher</span><span>Captive Portal</span><span>Marketing</span></div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18l-1.5 9.5A2 2 0 0 1 17.5 17H8a2 2 0 0 1-2-1.6L4 4H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/></svg></div>
+          <h3>Online-Marktplätze &amp; Lieferdienste</h3>
+          <p>Erweitern Sie Ihren Radius: Anbindung an digitale Marktplätze und Aufbau eigener Web-Bestellplattformen, um Bestellungen direkt digital zu verarbeiten und den Umsatz zu maximieren.</p>
+          <div class="tags"><span>Marktplätze</span><span>Lieferdienste</span><span>Umsatz</span></div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Kategorie 2 -->
+    <div class="cat">
+      <div class="cat-head reveal">
+        <span class="cat-num">02</span>
+        <h3>Bauwirtschaft &amp; Handwerk</h3>
+        <span class="line"></span>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.7-7-11a7 7 0 0 1 14 0c0 5.3-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <h3>Telematik, GPS-Ortung &amp; Tracking</h3>
+          <p>Volle Kontrolle über Ihren Fuhrpark: Live-Ortung von Fahrzeugen, Baumaschinen und teurem Werkzeug – inkl. Diebstahlschutz per Geofencing und digitalem Wartungsplaner.</p>
+          <div class="tags"><span>GPS-Live</span><span>Geofencing</span><span>Wartungsplaner</span></div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h11l5 5v13H4z"/><path d="M14 3v5h5"/><path d="M8 13h8M8 17h5"/></svg></div>
+          <h3>Digitale Bautagebuch-Apps</h3>
+          <p>Rechtssichere Dokumentation direkt von der Baustelle: mobile Apps für Poliere und Bauleiter zur lückenlosen Erfassung von Baufortschritten, Mängeln und Wetterdaten.</p>
+          <div class="tags"><span>Bautagebuch</span><span>Mängel</span><span>Wetterdaten</span></div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v5c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>Nachunternehmer-Check &amp; Compliance</h3>
+          <p>Schutz vor Risiken auf der Baustelle: digitale Prüfsysteme zur schnellen, rechtssicheren Erfassung und Archivierung von Ausweisen, Mindestlohnnachweisen und Subunternehmer-Dokumenten.</p>
+          <div class="tags"><span>Compliance</span><span>Prüfsystem</span><span>Archiv</span></div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Kategorie 3 -->
+    <div class="cat">
+      <div class="cat-head reveal">
+        <span class="cat-num">03</span>
+        <h3>Mobile Workplace &amp; zentrale IT</h3>
+        <span class="line"></span>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/><path d="M9.5 6.5 11 8l3.5-3.5"/></svg></div>
+          <h3>Mobile Workplace &amp; MDM</h3>
+          <p>Sicheres Arbeiten von überall: zentrale Verwaltung (Mobile Device Management) aller Firmen-Smartphones und Tablets – Schutz vor Datenverlust und automatisierte App-Updates aus der Ferne.</p>
+          <div class="tags"><span>MDM</span><span>Datenschutz</span><span>Remote-Updates</span></div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11 4 6l2-2 5 5"/><path d="M4 20h6v-6"/><rect x="12" y="3" width="9" height="7" rx="1.5"/><path d="M15 14h6v7h-6z"/></svg></div>
+          <h3>MDE &amp; Field Service Apps</h3>
+          <p>Effizienz für Außendienst und Reinigungsteams: mobile Datenerfassung für digitale Checklisten, Mängeldokumentation per Foto und direkte Statusmeldungen an die Zentrale.</p>
+          <div class="tags"><span>Checklisten</span><span>Foto-Doku</span><span>Außendienst</span></div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>Digitale Zeiterfassung &amp; PEP</h3>
+          <p>Transparente Personaleinsatzplanung (PEP) und rechtssichere Arbeitszeiterfassung per App oder Terminal – manipulationssicher, gesetzeskonform und bereit für die Lohnbuchhaltung.</p>
+          <div class="tags"><span>Zeiterfassung</span><span>PEP</span><span>Lohnbuchhaltung</span></div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="6" rx="2"/><path d="M6 7.5h.01M6 17h.01"/></svg></div>
+          <h3>High-Performance Web Hosting</h3>
+          <p>Das sichere Zuhause für Ihre Webprojekte: blitzschnelles, ausfallsicheres und DSGVO-konformes Hosting für Webseiten, Online-Shops und zentrale Cloud-Anwendungen.</p>
+          <div class="tags"><span>DSGVO-konform</span><span>Ausfallsicher</span><span>Schnell</span></div>
+        </article>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== PROCESS ===== -->
 <section class="section" id="ablauf">
   <div class="wrap">
@@ -486,12 +623,16 @@
 <section class="section" id="ueber">
   <div class="wrap about-grid">
     <div class="about-visual reveal">
-      <img src="assets/logicflow-logo-transparent.png" alt="LogicFlow – IT-Services & Lösungen">
+      <div class="about-lockup">
+        <img src="assets/logo-mark.png" alt="QuantumLogic Markenzeichen">
+        <div class="wm"><span class="a">Quantum</span><span class="b">Logic</span></div>
+        <div class="tag">IT-Services &amp; Lösungen</div>
+      </div>
     </div>
     <div class="about-copy reveal">
-      <span class="eyebrow">Über LogicFlow</span>
+      <span class="eyebrow">Über QuantumLogic</span>
       <h2>Technologie, die Ihr Business voranbringt</h2>
-      <p>LogicFlow steht für durchdachte, logisch aufgebaute digitale Lösungen – der Name ist Programm. Wir verbinden solide Softwareentwicklung mit modernem Design und dem gezielten Einsatz von KI, um Ergebnisse zu liefern, die nicht nur gut aussehen, sondern messbar wirken.</p>
+      <p>QuantumLogic steht für durchdachte, logisch aufgebaute digitale Lösungen – Präzision und Tempo, wie der Name verspricht. Wir verbinden solide Softwareentwicklung mit modernem Design und dem gezielten Einsatz von KI, um Ergebnisse zu liefern, die nicht nur gut aussehen, sondern messbar wirken.</p>
       <p>Ob Startup, Mittelstand oder Selbstständige: Wir sprechen Klartext statt Fachchinesisch und begleiten Sie von der ersten Idee bis weit über den Launch hinaus.</p>
       <ul class="about-list">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="#6D28D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><b>Ein Ansprechpartner</b> – von der Konzeption bis zur Wartung, alles aus einer Hand.</span></li>
@@ -521,7 +662,7 @@
 <section class="section" id="vorteile">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Warum LogicFlow</span>
+      <span class="eyebrow">Warum QuantumLogic</span>
       <h2>Ihre Vorteile auf einen Blick</h2>
       <p>Gute Gründe, Ihr nächstes digitales Projekt mit uns umzusetzen.</p>
     </div>
@@ -604,8 +745,8 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="assets/logo-mark.png" alt="LogicFlow" style="height:52px">
-        <p style="margin-top:14px">Maßgeschneiderte digitale Lösungen – Web, Apps, E-Commerce, KI-Design & Support. Von der ersten Idee bis zur fertigen Anwendung.</p>
+        <img src="assets/logo-mark.png" alt="QuantumLogic" style="height:52px">
+        <p style="margin-top:14px">Maßgeschneiderte digitale Lösungen &amp; Branchen-IT – Web, Apps, POS, Telematik, Mobile Workplace, Hosting &amp; Support. Von der Idee bis zur fertigen Anwendung.</p>
       </div>
       <div>
         <h4>Leistungen</h4>
@@ -614,6 +755,7 @@
           <li><a href="#leistungen">E-Commerce & Shops</a></li>
           <li><a href="#leistungen">KI-Webdesign</a></li>
           <li><a href="#leistungen">SEO & Performance</a></li>
+          <li><a href="#branchen">Branchenlösungen</a></li>
         </ul>
       </div>
       <div>
@@ -635,7 +777,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© <span id="year">2026</span> LogicFlow · IT-Services & Lösungen</span>
+      <span>© <span id="year">2026</span> QuantumLogic · IT-Services & Lösungen</span>
       <span>Mit Sorgfalt entwickelt · KI-gestützt umgesetzt</span>
     </div>
   </div>
