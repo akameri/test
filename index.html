@@ -201,6 +201,12 @@
   .cat-head h3{font-size:1.12rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--indigo)}
   .cat-head .line{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
 
+  /* ---------- Video ---------- */
+  #video{background:var(--bg)}
+  .video-frame{position:relative;max-width:960px;margin:0 auto;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--line);background:#000;aspect-ratio:16/9}
+  .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  @supports not (aspect-ratio:1){.video-frame{height:0;padding-bottom:56.25%}}
+
   /* ---------- Process ---------- */
   #ablauf{background:var(--bg-soft)}
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:step}
@@ -344,6 +350,7 @@
     <nav class="nav-links" id="navLinks">
       <a href="#leistungen">Leistungen</a>
       <a href="#branchen">Branchen</a>
+      <a href="#video">Video</a>
       <a href="#ablauf">Ablauf</a>
       <a href="#ueber">Über uns</a>
       <a href="#vorteile">Vorteile</a>
@@ -603,6 +610,27 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ===== VIDEO ===== -->
+<section class="section" id="video">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Video</span>
+      <h2>QuantumLogic im Überblick</h2>
+      <p>Sehen Sie in unserem kurzen Video, wie wir arbeiten und was wir für Sie umsetzen.</p>
+    </div>
+    <!-- HIER die Video-ID ersetzen: statt VIDEO_ID die ID aus Ihrem YouTube-Link einsetzen -->
+    <div class="video-frame reveal">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/VIDEO_ID?rel=0"
+        title="QuantumLogic Video"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+    </div>
   </div>
 </section>
 
