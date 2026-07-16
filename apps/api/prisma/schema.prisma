@@ -1,0 +1,85 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// NIS-2-Maßnahmenbereich (Art. 21 Abs. 2 lit. a–j sowie Art. 23 Meldepflichten)
+model MeasureArea {
+  id          String    @id @default(cuid())
+  key         String    @unique // z. B. "art21-a"
+  name        String
+  description String
+  sortOrder   Int
+  controls    Control[]
+}
+
+enum ControlStatus {
+  OPEN
+  IN_PROGRESS
+  IMPLEMENTED
+  NOT_APPLICABLE
+}
+
+/// Einzelne Maßnahme / Kontrolle, die der Kunde bewertet
+model Control {
+  id          String        @id @default(cuid())
+  code        String        @unique // z. B. "A-01"
+  title       String
+  description String
+  guidance    String        @default("") // Umsetzungshinweis / "nächster Schritt"
+  weight      Int           @default(3) // 1–5, Gewicht im Compliance-Score
+  status      ControlStatus @default(OPEN)
+  note        String        @default("")
+  areaId      String
+  area        MeasureArea   @relation(fields: [areaId], references: [id])
+  risks       Risk[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([areaId])
+}
+
+enum RiskStatus {
+  OPEN
+  MITIGATING
+  MITIGATED
+  ACCEPTED
+}
+
+/// Risiko aus der Risikoanalyse (Eintrittswahrscheinlichkeit × Auswirkung, je 1–5)
+model Risk {
+  id          String     @id @default(cuid())
+  title       String
+  description String     @default("")
+  likelihood  Int // 1–5
+  impact      Int // 1–5
+  status      RiskStatus @default(OPEN)
+  owner       String     @default("")
+  controlId   String?
+  control     Control?   @relation(fields: [controlId], references: [id])
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+/// Unveränderbares Audit-Log: INSERT-only (DB-Trigger verhindert UPDATE/DELETE),
+/// zusätzlich per SHA-256-Hash-Kette gegen nachträgliche Manipulation gesichert.
+model AuditLog {
+  id         BigInt   @id @default(autoincrement())
+  ts         DateTime @default(now())
+  actorId    String
+  actorName  String
+  action     String // z. B. "control.status.changed"
+  entityType String // "Control" | "Risk" | ...
+  entityId   String
+  oldValue   Json?
+  newValue   Json?
+  prevHash   String
+  hash       String
+
+  @@index([entityType, entityId])
+  @@index([ts])
+}

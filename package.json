@@ -1,0 +1,19 @@
+{
+  "name": "nis2-grc",
+  "version": "0.1.0",
+  "private": true,
+  "description": "NIS-2 GRC – Compliance-Check für die Geschäftsführung (Single Point of Truth für Compliance und Sicherheit)",
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev:api": "npm run start:dev --workspace apps/api",
+    "dev:web": "npm run dev --workspace apps/web",
+    "build": "npm run build --workspace apps/api && npm run build --workspace apps/web",
+    "db:setup": "npm run db:setup --workspace apps/api"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
