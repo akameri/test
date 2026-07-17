@@ -5,14 +5,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Zurückhaltende Enterprise-Palette – Vertrauen & Seriosität
+        // Österreich-Palette: Rot-Weiß-Rot (Austria-Rot #C8102E)
         brand: {
-          50: '#eef4ff',
-          100: '#dce7fd',
-          500: '#3b5bdb',
-          600: '#2f4ac2',
-          700: '#273da0',
-          900: '#1b2a6b',
+          50: '#fdf2f3',
+          100: '#fbe0e3',
+          500: '#e01e37',
+          600: '#c8102e',
+          700: '#a30d26',
+          900: '#6e0a1c',
         },
       },
     },

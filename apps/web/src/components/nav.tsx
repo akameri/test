@@ -17,13 +17,19 @@ export function Nav() {
   return (
     <aside className="flex w-56 shrink-0 flex-col border-r border-slate-200 bg-white">
       <div className="border-b border-slate-100 px-5 py-5">
-        <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-white">
-            N2
+        <div className="flex items-center gap-2.5">
+          {/* Rot-Weiß-Rot – Flagge Österreichs */}
+          <div
+            aria-label="Flagge Österreichs"
+            className="flex h-8 w-11 shrink-0 flex-col overflow-hidden rounded-md shadow-sm ring-1 ring-slate-200"
+          >
+            <div className="flex-1 bg-brand-600" />
+            <div className="flex-1 bg-white" />
+            <div className="flex-1 bg-brand-600" />
           </div>
           <div>
             <div className="text-sm font-semibold leading-tight">NIS-2 GRC</div>
-            <div className="text-[11px] text-slate-500">Compliance-Check</div>
+            <div className="text-[11px] text-slate-500">Compliance-Check Österreich</div>
           </div>
         </div>
       </div>
